@@ -1,0 +1,33 @@
+# Resumen de validación del dataset – NovaMarket Retail
+
+Este informe ha sido generado automáticamente por scripts/01_validacion_dataset.py.
+
+## 1. Validación de estructura
+Columnas detectadas: ['ID_Pedido', 'Fecha', 'ID_Cliente', 'Pais', 'Categoria', 'Producto', 'Precio_Unitario', 'Cantidad', 'Costo_Envio', 'Canal_Venta', 'Puntuacion_Satisfaccion']
+Estructura de columnas correcta.
+
+## 2. Validación de tipos y rangos
+Rango temporal correcto: todas las fechas pertenecen a 2025.
+Tipos numéricos, fechas y rangos principales validados correctamente.
+
+## 3. Nulos, duplicados y dominios
+Valores nulos totales: 0
+Filas duplicadas: 0
+ID_Pedido duplicados: 0
+Pais detectados: ['Argentina', 'Chile', 'Colombia', 'España', 'México']
+Categoria detectados: ['Estilo de Vida', 'Tecnología']
+Canal_Venta detectados: ['App', 'Tienda Física', 'Web']
+Producto detectados: ['Auriculares Noise-Cancelling', 'Botella Térmica Inteligente', 'Laptop Pro 15', 'Lámpara LED Escritorio', 'Mochila Ergonómica', 'Monitor 4K Curved', 'Set de Teclado Mecánico', 'Silla Gaming X', 'Smartphone Alpha', 'Smartwatch Series Z']
+
+## 4. KPIs de control
+Pedidos: 1.500
+Clientes únicos: 389
+Unidades vendidas: 2.440
+Ingresos brutos: 1.154.961,21 €
+Coste total de envío: 43.483,07 €
+Ticket medio: 769,97 €
+Ratio logístico sobre ingresos: 3,76%
+Satisfacción media: 3,91 / 5
+
+## 5. Resultado final
+Validación completada correctamente. El dataset es apto para Power BI.
