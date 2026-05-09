@@ -1,0 +1,49 @@
+{
+  "name": "NovaMarket Theme",
+  "dataColors": [
+    "#163A5F",
+    "#2F80ED",
+    "#27AE60",
+    "#F2994A"
+  ],
+  "background": "#F5F7FA",
+  "foreground": "#163A5F",
+  "tableAccent": "#2F80ED",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#D9E1EA"
+              }
+            },
+            "radius": 4
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#163A5F"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F5F7FA"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}
