@@ -6,9 +6,9 @@ El proyecto aborda un escenario de análisis de datos aplicado a una empresa omn
 
 El problema de negocio planteado consiste en ayudar al comité directivo a determinar si el crecimiento de 2025 ha sido **equilibrado, eficiente y sostenible**, identificando diferencias por país, canal, categoría, producto, satisfacción del cliente y comportamiento logístico, con el fin de apoyar decisiones de mejora para 2026.
 
-**Herramienta principal:** Power BI  
-**Lenguaje de soporte:** Python  
-**Estado:** En desarrollo
+- **Herramienta principal:** Power BI
+- **Lenguaje de soporte:** Python
+- **Estado:** Dashboard v0.9 disponible para revisión del profesor
 
 ## Índice
 
@@ -88,7 +88,7 @@ novamarket-retail-powerbi/
 │   ├── raw/
 │   └── processed/
 ├── powerbi/
-│   ├── NovaMarket_Retail_Dashboard.pbix  (pendiente de incorporación)
+│   ├── NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix
 │   ├── dax/
 │   │   └── medidas_dax.md
 │   └── theme/
@@ -109,7 +109,7 @@ novamarket-retail-powerbi/
     └── capturas_dashboard/
 ```
 
-**Estado del archivo PBIX:** `powerbi/NovaMarket_Retail_Dashboard.pbix` se encuentra **pendiente de incorporación** en el repositorio al cierre de esta revisión, por lo que todavía no figura como entregable disponible en Git.
+**Estado del archivo PBIX:** la versión candidata `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix` está disponible en el repositorio para revisión del profesor y sujeta a posibles correcciones académicas posteriores.
 
 ## Herramientas utilizadas
 
@@ -130,7 +130,7 @@ La carpeta `scripts/` contiene utilidades reproducibles para preparar y verifica
 
 Ejecución desde la raíz del repositorio:
 
-```bash
+```
 python scripts/01_validacion_dataset.py
 python scripts/02_limpieza_dataset.py
 python scripts/03_export_resumen_kpis.py
@@ -146,6 +146,8 @@ El dashboard ejecutivo se estructura en cuatro páginas principales, alineadas c
 | Productos y Categorías | Analizar la contribución de categorías y productos para identificar concentraciones, líderes y oportunidades comerciales |
 | Países y Canales | Comparar el rendimiento por mercado y canal para evaluar equilibrio geográfico y madurez omnicanal |
 | Satisfacción y Logística | Evaluar la experiencia del cliente y la presión logística a través de satisfacción, costes de envío e indicadores operativos |
+
+La versión candidata del dashboard está disponible en `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix` y se encuentra pendiente de revisión académica por parte del profesor Ortega.
 
 ## Medidas DAX
 
@@ -199,13 +201,13 @@ python scripts/03_export_resumen_kpis.py
 - Dataset original (`data/raw/`).
 - Dataset limpio (`data/processed/novamarket_retail_limpio.csv`).
 - Scripts Python de validación, limpieza y exportación.
-- Dashboard PBIX (**pendiente de incorporación** en el repositorio).
+- Dashboard PBIX versión candidata disponible en `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix`.
 - Tema visual (`powerbi/theme/novamarket_theme.json`).
 - Medidas DAX (`powerbi/dax/medidas_dax.md`).
 - Memoria (`docs/memoria_proyecto.md`).
 - Diccionario de datos (`docs/diccionario_datos.md`).
 - Guion de defensa (`presentation/guion_defensa_final.md`).
-- Capturas del dashboard (`assets/capturas_dashboard/`).
+- Capturas de las 4 hojas disponibles en `assets/capturas_dashboard/`.
 
 ## Limitaciones
 
@@ -223,9 +225,9 @@ La trazabilidad de este apoyo se documenta en `docs/prompts_utilizados.md`, dond
 
 ## Autores
 
-**Equipo 9 – Camila, Jen, Pablo y Marc**  
-**Asignatura:** Proyecto: Análisis de Datos  
-**Grado:** Grado en Ingeniería
+Equipo 9: Camila, Jen, Pablo y Marc  
+Asignatura: Proyecto: Análisis de Datos  
+Grado: Grado en Ingeniería
 
 ## Nota de uso académico
 
