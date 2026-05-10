@@ -130,7 +130,7 @@ La carpeta `scripts/` contiene utilidades reproducibles para preparar y verifica
 
 Ejecución desde la raíz del repositorio:
 
-```
+```bash
 python scripts/01_validacion_dataset.py
 python scripts/02_limpieza_dataset.py
 python scripts/03_export_resumen_kpis.py
