@@ -88,7 +88,7 @@ novamarket-retail-powerbi/
 │   ├── raw/
 │   └── processed/
 ├── powerbi/
-│   ├── NovaMarket_Retail_Dashboard.pbix
+│   ├── NovaMarket_Retail_Dashboard.pbix  (pendiente de incorporación)
 │   ├── dax/
 │   │   └── medidas_dax.md
 │   └── theme/
