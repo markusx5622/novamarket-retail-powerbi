@@ -3,7 +3,7 @@
 **Asignatura:** Proyecto: Análisis de Datos  
 **Grado:** Grado en Ingeniería  
 **Equipo:** Equipo 9  
-**Periodo académico:** 2025  
+**Periodo académico:** 2025-2026  
 
 ---
 
