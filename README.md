@@ -217,7 +217,7 @@ python scripts/03_export_resumen_kpis.py
 
 ## Uso de IA
 
-El proyecto ha utilizado herramientas de IA como apoyo en tareas de **generación**, **validación**, **documentación** y **planificación**, siempre bajo criterio humano, revisión del equipo y responsabilidad académica directa de sus integrantes.
+El proyecto ha utilizado herramientas de **IA generativa y asistencia tipo Copilot** como apoyo en tareas de **generación**, **validación**, **documentación** y **planificación**, siempre bajo criterio humano, revisión del equipo y responsabilidad académica directa de sus integrantes.
 
 La trazabilidad de este apoyo se documenta en `docs/prompts_utilizados.md`, donde se recoge el alcance del uso de IA, sus límites y los criterios de verificación aplicados para evitar invención de datos o conclusiones no contrastadas.
 
