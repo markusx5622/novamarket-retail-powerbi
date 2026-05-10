@@ -26,6 +26,12 @@ El equipo emplea IA de forma complementaria y académicamente responsable para m
 - Asistencia en sintaxis DAX y estructura de medidas.
 - Recomendaciones de buenas prácticas de versionado y orden del repositorio.
 
+### 6) Creación de la landing page
+- La landing page pública del proyecto ([https://cvqcet4rr4ktk.kimi.page](https://cvqcet4rr4ktk.kimi.page)) fue creada con el apoyo de **Kimi AI**.
+- Kimi AI se utilizó para componer y estructurar la presentación visual del proyecto.
+- El contenido fue revisado y validado por el equipo antes de su publicación.
+- La landing page actúa como material complementario de comunicación y no forma parte de los entregables académicos principales.
+
 ## Criterios de uso responsable
 - Verificación humana obligatoria de todo contenido sugerido por IA.
 - No uso de IA para inventar datos ni resultados.
