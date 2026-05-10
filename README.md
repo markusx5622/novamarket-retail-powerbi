@@ -209,6 +209,10 @@ python scripts/03_export_resumen_kpis.py
 - Guion de defensa (`presentation/guion_defensa_final.md`).
 - Capturas de las 4 hojas disponibles en `assets/capturas_dashboard/`.
 
+## Presentación de validación inicial
+
+`presentation/pitch_validacion_inicial/Presentacion_de_avances_NOVAMARKET_Retail.pdf`
+
 ## Limitaciones
 
 - El dataset es sintético y responde a un caso académico ficticio.
