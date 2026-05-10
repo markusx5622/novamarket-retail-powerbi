@@ -82,19 +82,19 @@ Construir un dashboard ejecutivo en Microsoft Power BI que permita al comité di
 
 El dashboard ha sido diseñado para dar respuesta a las necesidades analíticas de diferentes perfiles directivos dentro de NovaMarket Retail. Cada página del cuadro de mando se orienta a uno o varios de estos perfiles:
 
-**Dirección General**
+**Dirección General**  
 Necesita una visión global del estado del negocio: ingresos totales, evolución mensual, número de pedidos y ticket medio. La página de Resumen Ejecutivo está diseñada específicamente para este perfil.
 
-**Dirección Comercial**
+**Dirección Comercial**  
 Requiere información sobre qué productos y categorías lideran los ingresos, cuál es la distribución de ventas por línea de producto y cómo se comportan los rankings de producto en términos de contribución. La página de Productos y Categorías es la más relevante para este perfil.
 
-**Expansión Regional**
+**Expansión Regional**  
 Necesita entender el peso relativo de cada país, los desequilibrios de crecimiento entre mercados y el comportamiento diferencial por canal en cada región. La página de Países y Canales responde a estas necesidades.
 
-**Operaciones y Logística**
+**Operaciones y Logística**  
 Requiere monitorizar el coste de envío total, el coste medio por pedido y el coste envío relativo sobre los ingresos, identificando qué combinaciones de país, canal o producto generan mayor presión logística. La página de Satisfacción y Logística aborda específicamente estos indicadores.
 
-**Customer Experience**
+**Customer Experience**  
 Necesita valorar la satisfacción media del cliente, la proporción de valoraciones altas y bajas y la relación entre experiencia percibida y variables operativas como el canal o el producto. Esta dimensión también se cubre en la página de Satisfacción y Logística.
 
 ---
@@ -189,9 +189,10 @@ La salida de este script es un informe en consola que permite al equipo confirma
 Este script toma como entrada el dataset original de `data/raw/` y aplica las transformaciones necesarias para producir el dataset limpio en `data/processed/novamarket_retail_limpio.csv`. Las operaciones de limpieza incluyen:
 
 - Estandarización de nombres de columnas (eliminación de espacios, normalización de mayúsculas).
-- Corrección o eliminación de registros con valores nulos en campos críticos.
-- Eliminación de duplicados exactos.
 - Normalización de valores de texto en campos categóricos (eliminación de espacios extra, unificación de variantes ortográficas).
+- Conversión y verificación de tipos de datos para garantizar que las columnas numéricas y de fecha sean interpretadas correctamente.
+- Generación de columnas derivadas necesarias para el análisis (por ejemplo, año y mes a partir de la fecha).
+- Detección de errores críticos de integridad: si se identifican anomalías que comprometan la coherencia del dataset, el script detiene el proceso e informa al equipo, sin eliminar registros salvo que sea estrictamente necesario. La limpieza es conservadora y orientada a preservar la integridad del dato original.
 - Validación final de que el dataset resultante cumple con los dominios esperados y la integridad referencial mínima.
 
 El dataset limpio generado es el único fichero que se importa en Power BI, garantizando que el modelo semántico trabaja siempre sobre datos de calidad verificada.
@@ -236,7 +237,7 @@ El modelo semántico del dashboard se construye sobre una única tabla principal
 
 **Configuración de tipos de datos:** al importar el dataset en Power BI Desktop, se verifica que cada columna tenga asignado el tipo de dato correcto. En particular, `Fecha` debe configurarse como tipo Fecha, `Precio_Unitario` y `Costo_Envio` como tipo Decimal, y `Cantidad` y `Puntuacion_Satisfaccion` como tipo Número entero. Esta configuración es imprescindible para que las medidas temporales y los cálculos agregados funcionen correctamente.
 
-**Medidas DAX:** todas las métricas del dashboard se implementan como medidas explícitas en Power BI, siguiendo el principio de no utilizar columnas calculadas donde una medida es suficiente. Las medidas se organizan en grupos temáticos para facilitar su mantenimiento y comprensión.
+**Medidas DAX:** todas las métricas del dashboard se implementan como medidas explícitas en Power BI, siguiendo el principio de no utilizar columnas calculadas donde una medida es suficiente. Las medidas se organizan en una tabla auxiliar denominada **Medidas**, lo que facilita su localización, mantenimiento y comprensión dentro del modelo.
 
 **Tema visual corporativo:** el dashboard aplica el tema visual definido en `powerbi/theme/novamarket_theme.json`, que establece la paleta de colores corporativos de NovaMarket Retail, los estilos tipográficos, los colores de fondo de las páginas y los formatos de los elementos visuales. El uso de un tema centralizado garantiza la coherencia visual entre las cuatro páginas y evita la configuración manual elemento a elemento.
 
@@ -248,25 +249,32 @@ El modelo semántico del dashboard se construye sobre una única tabla principal
 
 A continuación se describen brevemente las medidas DAX más relevantes del modelo semántico, explicando su lógica de cálculo y su interpretación analítica.
 
-**Ingresos Brutos**  
+**Ingresos Brutos**
+
 Se calcula como la suma del producto entre `Precio_Unitario` y `Cantidad` para cada fila de la tabla `Ventas`. Representa el valor total de las ventas antes de cualquier deducción. Es la medida central del análisis comercial. Su valor de referencia para 2025 es 1.154.961,21 €.
 
-**Pedidos**  
+**Pedidos**
+
 Se calcula como el recuento distinto de `ID_Pedido`. Mide el número de transacciones únicas registradas en el periodo. No debe confundirse con el número de líneas de venta. Su valor de referencia para 2025 es 1.500 pedidos.
 
-**Clientes Únicos**  
+**Clientes Únicos**
+
 Se calcula como el recuento distinto de `ID_Cliente`. Mide el número de clientes que han realizado al menos un pedido en el periodo analizado. Su valor de referencia para 2025 es 389 clientes únicos.
 
-**Ticket Medio**  
+**Ticket Medio**
+
 Se calcula dividiendo los Ingresos Brutos entre el número de Pedidos. Representa el valor medio por transacción y es un indicador clave de la capacidad de monetización por pedido. Su valor de referencia para 2025 es 769,97 €.
 
-**Satisfacción Media**  
+**Satisfacción Media**
+
 Se calcula como la media aritmética de `Puntuacion_Satisfaccion`. Mide el nivel promedio de satisfacción del cliente en una escala de 1 a 5. Su valor de referencia para 2025 es 3,91 sobre 5. Esta medida se complementa con alertas operativas que señalan si la satisfacción media cae por debajo del umbral de 3,8.
 
-**Coste Envío Relativo**  
+**Coste Envío Relativo**
+
 Se calcula dividiendo el Coste Total de Envío entre los Ingresos Brutos. Expresa qué porcentaje de los ingresos se destina a cubrir los costes logísticos. Su valor de referencia para 2025 es 3,76%. Una alerta operativa se activa cuando este indicador supera el 5%, señalando una presión logística elevada.
 
-**Margen Neto Aproximado**  
+**Margen Neto Aproximado**
+
 Se calcula restando el Coste Total de Envío a los Ingresos Brutos. Es importante aclarar explícitamente que **esta medida no representa el beneficio contable real de la empresa**, ya que el dataset no contiene el coste de adquisición o producción de los productos. El Margen Neto Aproximado debe interpretarse exclusivamente como un indicador operativo que mide la presión del coste logístico sobre los ingresos, no como una medida de rentabilidad empresarial en sentido estricto. Su valor de referencia para 2025 es 1.111.478,14 €.
 
 ---
@@ -285,7 +293,7 @@ El dashboard de NovaMarket Retail ha sido diseñado siguiendo criterios de clari
 
 **Tarjetas KPI:** los indicadores más críticos (Ingresos Brutos, Pedidos, Clientes Únicos, Ticket Medio, Satisfacción Media, Coste Envío Relativo) se muestran como tarjetas de un único valor en la parte superior de las páginas relevantes, proporcionando una referencia rápida antes de explorar los detalles.
 
-**Visuales nativos de Power BI:** el dashboard utiliza exclusivamente visualizaciones nativas de Power BI (gráficos de barras, gráficos de columnas, gráficos de anillo, mapas de árbol, gráficos de dispersión, tablas y matrices). No se emplean visuales de terceros, garantizando la compatibilidad y la estabilidad del archivo.
+**Visuales nativos de Power BI:** el dashboard utiliza exclusivamente visualizaciones nativas de Power BI (gráficos de barras, gráficos de columnas, gráficos de anillo, gráficos de dispersión, tablas y matrices). No se emplean visuales de terceros, garantizando la compatibilidad y la estabilidad del archivo.
 
 **Tablas finales de detalle:** cada página incluye una tabla o matriz en la parte inferior que permite acceder al detalle de los datos filtrados, complementando la lectura visual con la precisión numérica.
 
@@ -298,11 +306,12 @@ El dashboard de NovaMarket Retail ha sido diseñado siguiendo criterios de clari
 **Objetivo:** proporcionar una visión global del rendimiento comercial de NovaMarket Retail durante 2025, con foco en los indicadores de mayor relevancia para la Dirección General.
 
 **Visuales principales:**
-- Tarjetas KPI con Ingresos Brutos, Pedidos, Clientes Únicos y Ticket Medio.
-- Gráfico de líneas o columnas con la evolución mensual de los ingresos brutos durante 2025.
-- Gráfico de barras comparativo de ingresos por país.
-- Gráfico de anillo o barras apiladas con la distribución de ingresos por canal de venta.
-- Tabla resumen con los KPIs principales por país.
+- Tarjetas KPI con Ingresos Brutos, Pedidos, Clientes Únicos, Unidades Vendidas, Coste Total de Envío y Satisfacción Media.
+- Gráfico de evolución mensual de los ingresos brutos durante 2025.
+- Gráfico de ingresos por país.
+- Gráfico de ingresos por canal de venta.
+- Gráfico del peso de categoría en el total de ingresos.
+- Tabla top productos por ingresos.
 
 **Valor analítico:** esta página permite detectar a primera vista la estacionalidad del negocio, el peso relativo de cada mercado y la distribución omnicanal de los ingresos. El comité directivo puede identificar en segundos si los resultados globales son coherentes con las expectativas estratégicas para 2025.
 
@@ -313,11 +322,11 @@ El dashboard de NovaMarket Retail ha sido diseñado siguiendo criterios de clari
 **Objetivo:** analizar en profundidad el rendimiento de las dos categorías de producto (Tecnología y Estilo de Vida) y de los productos individuales, permitiendo a la Dirección Comercial tomar decisiones de priorización y gestión de catálogo.
 
 **Visuales principales:**
-- Tarjetas KPI con Ingresos Brutos, Unidades Vendidas y Ticket Medio, segmentados por categoría.
-- Gráfico de barras o columnas con los ingresos por categoría.
-- Mapa de árbol (treemap) o gráfico de barras con los productos de mayor contribución a los ingresos.
-- Tabla de detalle con ingresos, unidades vendidas, precio unitario medio y satisfacción media por producto.
-- Segmentación por categoría para filtrado interactivo.
+- Gráfico de barras con los top productos por ingresos.
+- Gráfico de dispersión (scatter) de ingresos frente a satisfacción por producto.
+- Gráfico de ingresos por categoría.
+- Gráfico de top productos por unidades vendidas.
+- Tabla de detalle de productos con ingresos, unidades, precio y satisfacción.
 
 **Valor analítico:** esta página evidencia la concentración de los ingresos en la categoría Tecnología (que representa el 85,99% del total en el caso de referencia) y permite identificar qué productos individuales son los principales motores del negocio. También facilita comparar el precio medio y la satisfacción entre categorías.
 
@@ -328,11 +337,11 @@ El dashboard de NovaMarket Retail ha sido diseñado siguiendo criterios de clari
 **Objetivo:** comparar el desempeño de los cinco países y los tres canales de venta, ayudando a la Dirección de Expansión Regional a evaluar el equilibrio de la cartera geográfica y omnicanal.
 
 **Visuales principales:**
-- Tarjetas KPI con Ingresos Brutos, Pedidos y Clientes Únicos totales.
-- Gráfico de barras horizontales con ingresos, pedidos o ticket medio por país.
-- Gráfico de barras o columnas apiladas con la distribución de ingresos por canal dentro de cada país.
-- Gráfico de anillo con la participación de cada canal en el total de ingresos.
-- Tabla cruzada (matriz) de ingresos por país y canal.
+- Gráfico de ingresos por país.
+- Gráfico de ingresos por país y canal de venta.
+- Gráfico de pedidos por país.
+- Gráfico de satisfacción media por país.
+- Matriz cruzada de país × canal con ingresos.
 
 **Valor analítico:** esta página permite identificar la dependencia del negocio respecto a España (que concentra el 38,73% de los ingresos en el caso de referencia) y el peso dominante del canal Web (52,58%). También facilita detectar asimetrías: qué países utilizan más cada canal y qué combinaciones país-canal son más rentables en términos de ticket medio.
 
@@ -343,12 +352,11 @@ El dashboard de NovaMarket Retail ha sido diseñado siguiendo criterios de clari
 **Objetivo:** integrar la dimensión de experiencia de cliente con la eficiencia operativa logística, permitiendo a las áreas de Operaciones y Customer Experience identificar situaciones de riesgo y oportunidades de mejora.
 
 **Visuales principales:**
-- Tarjetas KPI con Satisfacción Media, % Satisfacción Alta, Coste Total de Envío, Coste Medio de Envío y Coste Envío Relativo.
-- Gráfico de barras con la satisfacción media por país, canal y/o categoría.
-- Gráfico de barras con el coste de envío relativo por país o canal.
-- Gráfico de dispersión o barras combinadas relacionando satisfacción y coste logístico.
-- Tabla de detalle con satisfacción media y coste de envío por combinación de país y canal.
-- Indicadores de alerta operativa (Alerta Satisfacción, Alerta Coste Envío Relativo, Segmento Operativo).
+- Gráfico de satisfacción media por canal de venta.
+- Gráfico de coste medio de envío por canal.
+- Gráfico de distribución de valoraciones de satisfacción.
+- Gráfico de dispersión (scatter) de coste logístico frente a satisfacción por país.
+- Tabla de combinaciones producto-canal con menor satisfacción.
 
 **Valor analítico:** esta página traduce la experiencia del cliente en una métrica monitorizable y la cruza con el coste logístico para identificar combinaciones de bajo rendimiento en ambas dimensiones. Las medidas de alerta automática permiten al equipo operativo priorizar las acciones de mejora sin necesidad de leer los datos en detalle.
 
@@ -398,6 +406,8 @@ El Equipo 9 ha utilizado herramientas de inteligencia artificial generativa como
 
 **Planificación del proyecto:** la IA ha contribuido a estructurar el plan de trabajo, identificar fases y proponer una organización del repositorio coherente con los estándares académicos y profesionales.
 
+**Landing page complementaria:** Kimi AI fue utilizada como apoyo para crear la landing page complementaria del proyecto. El contenido generado fue revisado y validado por el equipo antes de su publicación, siguiendo los mismos criterios de uso responsable aplicados al resto de entregables.
+
 **Criterios de uso responsable:** el equipo ha seguido en todo momento los siguientes principios: (1) ningún contenido generado por IA se ha aceptado sin revisión humana; (2) la IA no ha inventado datos, resultados ni conclusiones; (3) el uso de IA está explícitamente documentado en el repositorio (`docs/prompts_utilizados.md`); (4) la autoría intelectual del análisis, las decisiones metodológicas y las conclusiones recae íntegramente en el Equipo 9.
 
 ---
@@ -406,29 +416,51 @@ El Equipo 9 ha utilizado herramientas de inteligencia artificial generativa como
 
 El repositorio del proyecto sigue una estructura de carpetas clara y documentada, diseñada para garantizar la trazabilidad, la reproducibilidad y la facilidad de evaluación:
 
-**`data/`**  
+**`data/`**
+
 Contiene el dataset del proyecto organizado en dos subcarpetas:
 - `data/raw/`: versión original del dataset, sin ninguna modificación.
 - `data/processed/`: versión limpia y procesada lista para Power BI, junto con el resumen de KPIs de control.
 
-**`scripts/`**  
+**`scripts/`**
+
 Contiene los tres scripts Python del flujo de preparación de datos: validación (`01_validacion_dataset.py`), limpieza (`02_limpieza_dataset.py`) y exportación de KPIs (`03_export_resumen_kpis.py`).
 
-**`powerbi/`**  
+**`powerbi/`**
+
 Contiene el archivo `.pbix` del dashboard Power BI, el tema visual corporativo (`powerbi/theme/novamarket_theme.json`) y el documento de medidas DAX (`powerbi/dax/medidas_dax.md`).
 
-**`docs/`**  
+**`docs/`**
+
 Contiene toda la documentación académica del proyecto: esta memoria (`memoria_proyecto.md`), el diccionario de datos (`diccionario_datos.md`), la metodología (`metodologia.md`), el registro de prompts de IA (`prompts_utilizados.md`) y el checklist de entrega (`checklist_entrega.md`).
 
-**`presentation/`**  
+**`presentation/`**
+
 Contiene los materiales de presentación del proyecto: la presentación de validación inicial (`pitch_validacion_inicial/`) y el guion de defensa final (`guion_defensa_final.md`).
 
-**`assets/`**  
+**`assets/`**
+
 Contiene los recursos visuales del proyecto, incluyendo las capturas de pantalla de las cuatro páginas del dashboard (`assets/capturas_dashboard/`) que sirven de referencia para la evaluación y la documentación.
 
 ---
 
-## 20. Conclusiones
+## 20. Materiales Complementarios
+
+### 20.1 Presentación de Validación Inicial
+
+El repositorio incluye la presentación empleada en la fase de validación inicial del proyecto, ubicada en `presentation/pitch_validacion_inicial/`. Este material recoge el planteamiento del caso de negocio, los objetivos del dashboard y la propuesta metodológica que fue expuesta y validada ante el profesorado al inicio del desarrollo. Forma parte del proceso académico formal y está disponible para su consulta como referencia del punto de partida del proyecto.
+
+### 20.2 Landing Page Complementaria
+
+Como material adicional de comunicación, el Equipo 9 ha publicado una landing page complementaria accesible en la siguiente dirección:
+
+**[https://cvqcet4rr4ktk.kimi.page](https://cvqcet4rr4ktk.kimi.page)**
+
+Esta página tiene un propósito exclusivamente divulgativo: presenta el proyecto de forma visual y accesible para audiencias no técnicas. Es importante aclarar que la landing page **no sustituye al dashboard, a esta memoria ni al repositorio**, que constituyen los entregables académicos principales. Se trata de un recurso complementario de comunicación, elaborado con el apoyo de Kimi AI y revisado por el equipo, que no forma parte de los criterios de evaluación formales del proyecto.
+
+---
+
+## 21. Conclusiones
 
 El proyecto NovaMarket Retail – Power BI Dashboard demuestra cómo el análisis de datos transaccionales puede transformarse en una herramienta ejecutiva de valor real para la toma de decisiones de negocio. A través de un proceso metodológico estructurado —que incluye la definición del caso, la preparación y validación del dataset, el modelado semántico, el diseño del dashboard y la documentación académica— el Equipo 9 ha construido una solución analítica que integra cuatro dimensiones clave del negocio: rendimiento comercial, gestión de producto, expansión geográfica y experiencia de cliente y logística.
 
@@ -440,7 +472,7 @@ En resumen, el Equipo 9 entrega un proyecto coherente, bien documentado y analí
 
 ---
 
-## 21. Líneas Futuras de Mejora
+## 22. Líneas Futuras de Mejora
 
 El proyecto actual, diseñado y desarrollado en el marco temporal y académico definido, deja abiertas varias líneas de mejora que permitirían ampliar su alcance y su utilidad en un contexto profesional o en una futura extensión académica:
 
