@@ -25,6 +25,7 @@ El problema de negocio planteado consiste en ayudar al comité directivo a deter
 - [Metodología](#metodología)
 - [Cómo reproducir el proyecto](#cómo-reproducir-el-proyecto)
 - [Entregables](#entregables)
+- [Documentación complementaria](#documentación-complementaria)
 - [Landing page del proyecto](#landing-page-del-proyecto)
 - [Limitaciones](#limitaciones)
 - [Uso de IA](#uso-de-ia)
@@ -209,6 +210,14 @@ python scripts/03_export_resumen_kpis.py
 - Diccionario de datos (`docs/diccionario_datos.md`).
 - Guion de defensa (`presentation/guion_defensa_final.md`).
 - Capturas de las 4 hojas disponibles en `assets/capturas_dashboard/`.
+
+## Documentación complementaria
+
+- `00_LEEME_ENTREGA.md`: resumen rápido de entregables y ubicaciones principales.
+- `docs/trazabilidad_requisitos_canvas.md`: correspondencia entre requisitos de Canvas y artefactos del repositorio.
+- `docs/validacion_dashboard.md`: criterios de validación del dashboard frente al resumen de KPIs de control.
+- `docs/decisiones_diseno_dashboard.md`: justificación de las decisiones de estructura y diseño visual del dashboard.
+- `docs/guia_usuario_dashboard.md`: guía de uso página por página para la revisión del informe.
 
 ## Presentación de validación inicial
 
