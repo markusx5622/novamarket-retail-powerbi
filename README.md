@@ -227,11 +227,11 @@ python scripts/03_export_resumen_kpis.py
 
 El Equipo 9 ha creado una **landing page pública** como material complementario de comunicación para presentar visualmente el proyecto:
 
-**Enlace:** [https://cvqcet4rr4ktk.kimi.page](https://cvqcet4rr4ktk.kimi.page)
+**Enlace:** [https://novamarket-retail.vercel.app/](https://novamarket-retail.vercel.app/)
 
 La landing page ofrece una introducción accesible al caso empresarial, el problema de negocio y los principales resultados del análisis. Es un recurso de apoyo y **no sustituye** al dashboard Power BI, el archivo PBIX, la memoria académica ni el repositorio GitHub, que siguen siendo los entregables principales del proyecto.
 
-Fue creada con el apoyo de **Kimi AI** y revisada por el equipo antes de su publicación. La documentación completa sobre la landing page se encuentra en [`docs/landing_page.md`](docs/landing_page.md). Las capturas de pantalla se almacenan en [`assets/landing_page/`](assets/landing_page/).
+Fue creada con el apoyo de **GitHub Copilot** y revisada por el equipo antes de su publicación. La documentación completa sobre la landing page se encuentra en [`docs/landing_page.md`](docs/landing_page.md). Las capturas de pantalla se almacenan en [`assets/landing_page/`](assets/landing_page/).
 
 > **Nota:** la disponibilidad de la landing page depende de una plataforma externa y no está garantizada a largo plazo.
 
