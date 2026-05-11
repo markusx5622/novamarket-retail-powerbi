@@ -66,7 +66,7 @@ En este contexto, el dashboard se plantea como una herramienta ejecutiva para si
 
 ## Dataset
 
-El proyecto utiliza un dataset en formato **CSV** con registros transaccionales del año 2025. El conjunto de datos original se conserva en `data/raw/` y la versión limpia para análisis se genera y almacena en `data/processed/`.
+El proyecto utiliza un dataset en formato **CSV** con registros transaccionales del año 2025. El conjunto de datos original se conserva en [`data/raw/`](data/raw/) y la versión limpia para análisis se genera y almacena en [`data/processed/`](data/processed/).
 
 | Variable | Valor |
 |---|---|
@@ -78,7 +78,7 @@ El proyecto utiliza un dataset en formato **CSV** con registros transaccionales 
 | Categorías | 2 |
 | Formato | CSV |
 
-La definición de campos y criterios de interpretación se documenta en `docs/diccionario_datos.md`.
+La definición de campos y criterios de interpretación se documenta en [`docs/diccionario_datos.md`](docs/diccionario_datos.md).
 
 ## Estructura del repositorio
 
@@ -111,7 +111,7 @@ novamarket-retail-powerbi/
     └── capturas_dashboard/
 ```
 
-**Estado del archivo PBIX:** la versión candidata `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix` está disponible en el repositorio para revisión del profesor y sujeta a posibles correcciones académicas posteriores.
+**Estado del archivo PBIX:** la versión candidata [`powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix`](powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix) está disponible en el repositorio para revisión del profesor y sujeta a posibles correcciones académicas posteriores.
 
 ## Herramientas utilizadas
 
@@ -124,11 +124,11 @@ novamarket-retail-powerbi/
 
 ## Scripts Python
 
-La carpeta `scripts/` contiene utilidades reproducibles para preparar y verificar los datos antes de su consumo en Power BI:
+La carpeta [`scripts/`](scripts/) contiene utilidades reproducibles para preparar y verificar los datos antes de su consumo en Power BI:
 
-- `01_validacion_dataset.py`: valida estructura, valores nulos, duplicados, dominios esperados y KPIs base de control.
-- `02_limpieza_dataset.py`: genera `data/processed/novamarket_retail_limpio.csv`.
-- `03_export_resumen_kpis.py`: genera `data/processed/resumen_kpis_powerbi.md`.
+- [`01_validacion_dataset.py`](scripts/01_validacion_dataset.py): valida estructura, valores nulos, duplicados, dominios esperados y KPIs base de control.
+- [`02_limpieza_dataset.py`](scripts/02_limpieza_dataset.py): genera [`data/processed/novamarket_retail_limpio.csv`](data/processed/novamarket_retail_limpio.csv).
+- [`03_export_resumen_kpis.py`](scripts/03_export_resumen_kpis.py): genera [`data/processed/resumen_kpis_powerbi.md`](data/processed/resumen_kpis_powerbi.md).
 
 Ejecución desde la raíz del repositorio:
 
@@ -149,11 +149,11 @@ El dashboard ejecutivo se estructura en cuatro páginas principales, alineadas c
 | Países y Canales | Comparar el rendimiento por mercado y canal para evaluar equilibrio geográfico y madurez omnicanal |
 | Satisfacción y Logística | Evaluar la experiencia del cliente y la presión logística a través de satisfacción, costes de envío e indicadores operativos |
 
-La versión candidata del dashboard está disponible en `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix` y se encuentra pendiente de revisión académica por parte del profesor Ortega.
+La versión candidata del dashboard está disponible en [`powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix`](powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix) y se encuentra pendiente de revisión académica por parte del profesor Ortega.
 
 ## Medidas DAX
 
-Las medidas oficiales del modelo se documentan en `powerbi/dax/medidas_dax.md`. Este archivo centraliza la definición de KPIs y facilita la trazabilidad entre el dataset limpio, los cálculos del modelo y la validación final en Power BI.
+Las medidas oficiales del modelo se documentan en [`powerbi/dax/medidas_dax.md`](powerbi/dax/medidas_dax.md). Este archivo centraliza la definición de KPIs y facilita la trazabilidad entre el dataset limpio, los cálculos del modelo y la validación final en Power BI.
 
 Ejemplos de indicadores incluidos:
 
@@ -175,7 +175,7 @@ El flujo metodológico del proyecto se resume en las siguientes etapas:
 5. Diseño del dashboard ejecutivo.
 6. Validación final contra KPIs de control.
 
-La metodología ampliada se encuentra en `docs/metodologia.md`.
+La metodología ampliada se encuentra en [`docs/metodologia.md`](docs/metodologia.md).
 
 ## Cómo reproducir el proyecto
 
@@ -183,9 +183,9 @@ La metodología ampliada se encuentra en `docs/metodologia.md`.
 2. Instalar dependencias Python.
 3. Ejecutar los scripts de validación, limpieza y exportación.
 4. Abrir Power BI Desktop.
-5. Cargar `data/processed/novamarket_retail_limpio.csv`.
+5. Cargar [`data/processed/novamarket_retail_limpio.csv`](data/processed/novamarket_retail_limpio.csv).
 6. Crear o aplicar las medidas DAX documentadas.
-7. Validar los KPIs con `data/processed/resumen_kpis_powerbi.md`.
+7. Validar los KPIs con [`data/processed/resumen_kpis_powerbi.md`](data/processed/resumen_kpis_powerbi.md).
 
 Comandos de referencia:
 
@@ -200,28 +200,28 @@ python scripts/03_export_resumen_kpis.py
 
 ## Entregables
 
-- Dataset original (`data/raw/`).
-- Dataset limpio (`data/processed/novamarket_retail_limpio.csv`).
-- Scripts Python de validación, limpieza y exportación.
-- Dashboard PBIX versión candidata disponible en `powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix`.
-- Tema visual (`powerbi/theme/novamarket_theme.json`).
-- Medidas DAX (`powerbi/dax/medidas_dax.md`).
-- Memoria (`docs/memoria_proyecto.md`).
-- Diccionario de datos (`docs/diccionario_datos.md`).
-- Guion de defensa (`presentation/guion_defensa_final.md`).
-- Capturas de las 4 hojas disponibles en `assets/capturas_dashboard/`.
+- Dataset original ([`data/raw/`](data/raw/)).
+- Dataset limpio ([`data/processed/novamarket_retail_limpio.csv`](data/processed/novamarket_retail_limpio.csv)).
+- Scripts Python de validación, limpieza y exportación ([`scripts/`](scripts/)).
+- Dashboard PBIX versión candidata disponible en [`powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix`](powerbi/NovaMarket_Retail_Dashboard_v0.9_revision_profesor.pbix).
+- Tema visual ([`powerbi/theme/novamarket_theme.json`](powerbi/theme/novamarket_theme.json)).
+- Medidas DAX ([`powerbi/dax/medidas_dax.md`](powerbi/dax/medidas_dax.md)).
+- Memoria ([`docs/memoria_proyecto.md`](docs/memoria_proyecto.md)).
+- Diccionario de datos ([`docs/diccionario_datos.md`](docs/diccionario_datos.md)).
+- Guion de defensa ([`presentation/guion_defensa_final.md`](presentation/guion_defensa_final.md)).
+- Capturas de las 4 hojas disponibles en [`assets/capturas_dashboard/`](assets/capturas_dashboard/).
 
 ## Documentación complementaria
 
-- `00_LEEME_ENTREGA.md`: resumen rápido de entregables y ubicaciones principales.
-- `docs/trazabilidad_requisitos_canvas.md`: correspondencia entre requisitos de Canvas y artefactos del repositorio.
-- `docs/validacion_dashboard.md`: criterios de validación del dashboard frente al resumen de KPIs de control.
-- `docs/decisiones_diseno_dashboard.md`: justificación de las decisiones de estructura y diseño visual del dashboard.
-- `docs/guia_usuario_dashboard.md`: guía de uso página por página para la revisión del informe.
+- [`00_LEEME_ENTREGA.md`](00_LEEME_ENTREGA.md): resumen rápido de entregables y ubicaciones principales.
+- [`docs/trazabilidad_requisitos_canvas.md`](docs/trazabilidad_requisitos_canvas.md): correspondencia entre requisitos de Canvas y artefactos del repositorio.
+- [`docs/validacion_dashboard.md`](docs/validacion_dashboard.md): criterios de validación del dashboard frente al resumen de KPIs de control.
+- [`docs/decisiones_diseno_dashboard.md`](docs/decisiones_diseno_dashboard.md): justificación de las decisiones de estructura y diseño visual del dashboard.
+- [`docs/guia_usuario_dashboard.md`](docs/guia_usuario_dashboard.md): guía de uso página por página para la revisión del informe.
 
 ## Presentación de validación inicial
 
-`presentation/pitch_validacion_inicial/Presentacion_de_avances_NOVAMARKET_Retail.pdf`
+- [`presentation/pitch_validacion_inicial/Presentacion_de_avances_NOVAMARKET_Retail.pdf`](presentation/pitch_validacion_inicial/Presentacion_de_avances_NOVAMARKET_Retail.pdf)
 
 ## Landing page del proyecto
 
@@ -231,7 +231,7 @@ El Equipo 9 ha creado una **landing page pública** como material complementario
 
 La landing page ofrece una introducción accesible al caso empresarial, el problema de negocio y los principales resultados del análisis. Es un recurso de apoyo y **no sustituye** al dashboard Power BI, el archivo PBIX, la memoria académica ni el repositorio GitHub, que siguen siendo los entregables principales del proyecto.
 
-Fue creada con el apoyo de **Kimi AI** y revisada por el equipo antes de su publicación. La documentación completa sobre la landing page se encuentra en `docs/landing_page.md`. Las capturas de pantalla se almacenan en `assets/landing_page/`.
+Fue creada con el apoyo de **Kimi AI** y revisada por el equipo antes de su publicación. La documentación completa sobre la landing page se encuentra en [`docs/landing_page.md`](docs/landing_page.md). Las capturas de pantalla se almacenan en [`assets/landing_page/`](assets/landing_page/).
 
 > **Nota:** la disponibilidad de la landing page depende de una plataforma externa y no está garantizada a largo plazo.
 
@@ -247,7 +247,7 @@ Fue creada con el apoyo de **Kimi AI** y revisada por el equipo antes de su publ
 
 El proyecto ha utilizado herramientas de **IA generativa y asistencia tipo Copilot** como apoyo en tareas de **generación**, **validación**, **documentación** y **planificación**, siempre bajo criterio humano, revisión del equipo y responsabilidad académica directa de sus integrantes.
 
-La trazabilidad de este apoyo se documenta en `docs/prompts_utilizados.md`, donde se recoge el alcance del uso de IA, sus límites y los criterios de verificación aplicados para evitar invención de datos o conclusiones no contrastadas.
+La trazabilidad de este apoyo se documenta en [`docs/prompts_utilizados.md`](docs/prompts_utilizados.md), donde se recoge el alcance del uso de IA, sus límites y los criterios de verificación aplicados para evitar invención de datos o conclusiones no contrastadas.
 
 ## Autores
 
