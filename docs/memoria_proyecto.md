@@ -406,7 +406,7 @@ El Equipo 9 ha utilizado herramientas de inteligencia artificial generativa como
 
 **Planificación del proyecto:** la IA ha contribuido a estructurar el plan de trabajo, identificar fases y proponer una organización del repositorio coherente con los estándares académicos y profesionales.
 
-**Landing page complementaria:** Kimi AI fue utilizada como apoyo para crear la landing page complementaria del proyecto. El contenido generado fue revisado y validado por el equipo antes de su publicación, siguiendo los mismos criterios de uso responsable aplicados al resto de entregables.
+**Landing page complementaria:** la landing page complementaria del proyecto fue creada con el apoyo de **GitHub Copilot** y desplegada mediante **Vercel**. El contenido generado fue revisado y validado por el equipo antes de su publicación, siguiendo los mismos criterios de uso responsable aplicados al resto de entregables.
 
 **Criterios de uso responsable:** el equipo ha seguido en todo momento los siguientes principios: (1) ningún contenido generado por IA se ha aceptado sin revisión humana; (2) la IA no ha inventado datos, resultados ni conclusiones; (3) el uso de IA está explícitamente documentado en el repositorio (`docs/prompts_utilizados.md`); (4) la autoría intelectual del análisis, las decisiones metodológicas y las conclusiones recae íntegramente en el Equipo 9.
 
@@ -454,9 +454,9 @@ El repositorio incluye la presentación empleada en la fase de validación inici
 
 Como material adicional de comunicación, el Equipo 9 ha publicado una landing page complementaria accesible en la siguiente dirección:
 
-**[https://cvqcet4rr4ktk.kimi.page](https://cvqcet4rr4ktk.kimi.page)**
+**[https://novamarket-retail.vercel.app/](https://novamarket-retail.vercel.app/)**
 
-Esta página tiene un propósito exclusivamente divulgativo: presenta el proyecto de forma visual y accesible para audiencias no técnicas. Es importante aclarar que la landing page **no sustituye al dashboard, a esta memoria ni al repositorio**, que constituyen los entregables académicos principales. Se trata de un recurso complementario de comunicación, elaborado con el apoyo de Kimi AI y revisado por el equipo, que no forma parte de los criterios de evaluación formales del proyecto.
+Esta página tiene un propósito exclusivamente divulgativo: presenta el proyecto de forma visual y accesible para audiencias no técnicas. Es importante aclarar que la landing page **no sustituye al dashboard, a esta memoria ni al repositorio**, que constituyen los entregables académicos principales. Se trata de un recurso complementario de comunicación, elaborado con el apoyo de **GitHub Copilot** y desplegado mediante **Vercel**, revisado por el equipo, que no forma parte de los criterios de evaluación formales del proyecto.
 
 ---
 
