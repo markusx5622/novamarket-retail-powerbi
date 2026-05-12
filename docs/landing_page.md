@@ -18,7 +18,7 @@ Su función es facilitar una primera aproximación visual al proyecto para audie
 
 ## Creación con GitHub Copilot
 
-La landing page fue creada con el apoyo de **GitHub Copilot** y desplegada mediante **Vercel**. El contenido fue revisado y validado por el equipo antes de su publicación. El uso de esta herramienta sigue los mismos criterios de responsabilidad académica documentados en `docs/prompts_utilizados.md`.
+La landing page fue creada con el apoyo de **GitHub Copilot** y desplegada mediante **Vercel**. El contenido fue revisado y validado por el equipo antes de su publicación. El uso de estas herramientas sigue los mismos criterios de responsabilidad académica documentados en `docs/prompts_utilizados.md`.
 
 Esta es la versión actual y oficial de la landing page del proyecto NovaMarket Retail.
 
