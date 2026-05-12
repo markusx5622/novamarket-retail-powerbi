@@ -192,7 +192,7 @@ Comandos de referencia:
 ```bash
 git clone https://github.com/markusx5622/novamarket-retail-powerbi.git
 cd novamarket-retail-powerbi
-pip install pandas
+pip install -r requirements.txt
 python scripts/01_validacion_dataset.py
 python scripts/02_limpieza_dataset.py
 python scripts/03_export_resumen_kpis.py

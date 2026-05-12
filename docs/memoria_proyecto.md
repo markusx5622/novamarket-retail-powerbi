@@ -1,9 +1,12 @@
 # Memoria Académica del Proyecto: NovaMarket Retail – Power BI Dashboard
 
-**Asignatura:** Proyecto: Análisis de Datos  
-**Grado:** Grado en Ingeniería  
-**Equipo:** Equipo 9  
-**Periodo académico:** 2025-2026  
+**Asignatura:** Proyecto: Análisis de Datos
+
+**Grado:** Grado en Ingeniería
+
+**Equipo:** Equipo 9
+
+**Periodo académico:** 2025-2026
 
 ---
 
@@ -82,19 +85,24 @@ Construir un dashboard ejecutivo en Microsoft Power BI que permita al comité di
 
 El dashboard ha sido diseñado para dar respuesta a las necesidades analíticas de diferentes perfiles directivos dentro de NovaMarket Retail. Cada página del cuadro de mando se orienta a uno o varios de estos perfiles:
 
-**Dirección General**  
+**Dirección General**
+
 Necesita una visión global del estado del negocio: ingresos totales, evolución mensual, número de pedidos y ticket medio. La página de Resumen Ejecutivo está diseñada específicamente para este perfil.
 
-**Dirección Comercial**  
+**Dirección Comercial**
+
 Requiere información sobre qué productos y categorías lideran los ingresos, cuál es la distribución de ventas por línea de producto y cómo se comportan los rankings de producto en términos de contribución. La página de Productos y Categorías es la más relevante para este perfil.
 
-**Expansión Regional**  
+**Expansión Regional**
+
 Necesita entender el peso relativo de cada país, los desequilibrios de crecimiento entre mercados y el comportamiento diferencial por canal en cada región. La página de Países y Canales responde a estas necesidades.
 
-**Operaciones y Logística**  
+**Operaciones y Logística**
+
 Requiere monitorizar el coste de envío total, el coste medio por pedido y el coste envío relativo sobre los ingresos, identificando qué combinaciones de país, canal o producto generan mayor presión logística. La página de Satisfacción y Logística aborda específicamente estos indicadores.
 
-**Customer Experience**  
+**Customer Experience**
+
 Necesita valorar la satisfacción media del cliente, la proporción de valoraciones altas y bajas y la relación entre experiencia percibida y variables operativas como el canal o el producto. Esta dimensión también se cubre en la página de Satisfacción y Logística.
 
 ---
@@ -103,10 +111,12 @@ Necesita valorar la satisfacción media del cliente, la proporción de valoracio
 
 El proyecto NovaMarket Retail – Power BI Dashboard guarda relación directa con dos Objetivos de Desarrollo Sostenible de la Agenda 2030 de Naciones Unidas:
 
-**ODS 8: Trabajo decente y crecimiento económico**  
+**ODS 8: Trabajo decente y crecimiento económico**
+
 El dashboard permite a la dirección evaluar si el crecimiento de la empresa es equilibrado y sostenible. Al monitorizar la eficiencia logística, la concentración de ingresos por mercado y la satisfacción del cliente, la herramienta facilita la toma de decisiones que pueden conducir a un crecimiento económico más inclusivo y distribuido entre los cinco países donde opera NovaMarket Retail, contribuyendo también a la mejora de las condiciones operativas de los trabajadores de la empresa.
 
-**ODS 12: Producción y consumo responsables**  
+**ODS 12: Producción y consumo responsables**
+
 El seguimiento del coste de envío relativo y la eficiencia operativa logística guarda relación con la producción responsable, en tanto que una logística más eficiente implica un menor desperdicio de recursos. Asimismo, la monitorización de la satisfacción del cliente invita a reflexionar sobre la calidad y la pertinencia de los productos ofrecidos, alineándose con los principios de consumo responsable.
 
 Es importante señalar que esta relación con los ODS se plantea desde la perspectiva del análisis de negocio en el marco del caso académico. No se trata de un compromiso corporativo formal, sino de una reflexión sobre la dimensión social y ambiental del tipo de decisiones que el dashboard puede informar.
