@@ -4,7 +4,7 @@
 
 La landing page es una página web pública creada por el Equipo 9 para presentar visualmente el proyecto NovaMarket Retail. Ofrece una introducción accesible al caso empresarial, el problema de negocio abordado y los principales resultados analíticos del dashboard Power BI.
 
-**Enlace:** [https://cvqcet4rr4ktk.kimi.page](https://cvqcet4rr4ktk.kimi.page)
+**Enlace:** [https://novamarket-retail.vercel.app/](https://novamarket-retail.vercel.app/)
 
 ## Material complementario
 
@@ -16,9 +16,9 @@ La landing page es material **complementario de comunicación**. No sustituye ni
 
 Su función es facilitar una primera aproximación visual al proyecto para audiencias no técnicas o como material de apoyo durante la presentación y defensa.
 
-## Creación con Kimi AI
+## Creación con GitHub Coiplot
 
-La landing page fue creada con el apoyo de **Kimi AI**, herramienta de IA generativa utilizada para componer y estructurar la página de presentación. El contenido fue revisado y validado por el equipo antes de su publicación. El uso de esta herramienta sigue los mismos criterios de responsabilidad académica documentados en `docs/prompts_utilizados.md`.
+La landing page fue creada con el apoyo de **GitHub Copilot** y desplegada a través **Vercel**, herramienta de IA generativa utilizada para componer y estructurar la página de presentación. El contenido fue revisado y validado por el equipo antes de su publicación. El uso de esta herramienta sigue los mismos criterios de responsabilidad académica documentados en `docs/prompts_utilizados.md`.
 
 ## Capturas de pantalla
 
@@ -26,6 +26,6 @@ Las capturas de la landing page se almacenan en `assets/landing_page/`. Consulta
 
 ## Limitaciones
 
-- La landing page depende de un **enlace externo** gestionado por la plataforma Kimi AI, cuya disponibilidad no está garantizada a largo plazo.
+- La landing page depende de un **enlace externo** gestionado por la plataforma **Vercel**, cuya disponibilidad no está garantizada a largo plazo.
 - El contenido de la página es una síntesis orientada a la comunicación y no incluye el detalle analítico completo del dashboard ni la documentación técnica del repositorio.
 - En caso de que el enlace quede inaccesible, las capturas disponibles en `assets/landing_page/` sirven como referencia documental del contenido original.
