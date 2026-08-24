@@ -1,0 +1,83 @@
+# ===============================
+# Python – bytecode y caché
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ===============================
+# Entornos virtuales
+# ===============================
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ===============================
+# Herramientas de calidad y caché
+# ===============================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ===============================
+# Notebooks Jupyter
+# ===============================
+*.ipynb
+.ipynb_checkpoints/
+
+# ===============================
+# Power BI – caché local y temporales
+# ===============================
+*.pbix.autosave
+*.tmp
+*.bak
+*.laccdb
+*.ldb
+*/.pbi/cache/**
+*/.pbi/localSettings.json
+*/.pbi/mashup.cache
+.pbicache/
+
+# ===============================
+# Archivos temporales de Office
+# ===============================
+~$*
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# ===============================
+# Sistema operativo
+# ===============================
+.DS_Store
+Thumbs.db
+desktop.ini
+Desktop.ini
+
+# ===============================
+# Editores / IDE
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# Reglas de inclusión explícita
+# (estos tipos de archivo NUNCA deben ignorarse)
+# ===============================
+!*.pbix
+!*.csv
+!*.md
+!*.json
+!*.py
